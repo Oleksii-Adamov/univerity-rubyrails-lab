@@ -1,0 +1,11 @@
+<h1>Baggages</h1>
+
+<ul>
+  <% @baggages.each do |baggage| %>
+    <li>
+      num = <%= baggage.num %>,  weight = <%= baggage.weight %>
+    </li>
+  <% end %>
+</ul>
+<%= link_to "New Baggage", new_baggage_path %>
+
