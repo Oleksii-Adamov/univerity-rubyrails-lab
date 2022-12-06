@@ -1,9 +1,2 @@
-<% if @baggage.nil? %>
-  <h1>Not found</h1>
-<% else %>
-  <h1>Baggage</h1>
-  <p>id = <%= @baggage.id %></p>
-  <p>num = <%= @baggage.num %></p>
-  <p>weight = <%= @baggage.weight %></p>
-<% end %>
-
+<h1>A task</h1>
+<%= render "show_baggage", baggage: @baggage %>

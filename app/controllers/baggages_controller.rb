@@ -77,16 +77,33 @@ class BaggagesController < ApplicationController
 
   public
 
-  def c_task
-    delta = 0.5
-    result = (not @baggages.find {|baggage| @baggages.select{|second_baggage| baggage.num == second_baggage.num and
-      not (baggage.weight - second_baggage.weight).abs > delta}.length > 0}.nil?)
-    flash.now[:notice] = "True" ? result : "False"
-  end
-
   def a_task
     delta = 0.3
-    #res_baggage = @baggages.find {|baggage| not (baggage_mean_weight(baggage) - mean).abs > delta}
     @baggage = Baggage.where("ABS(weight - :mean) > :delta", {mean: Baggage.average(:weight), delta: delta}).first
+  end
+
+  def b_task
+    @num_more_than_two = Baggage.where("num > 2").count
+    @num_more_than_mean = Baggage.where("num > :mean", {mean: Baggage.average(:num)}).count
+  end
+
+  def c_task
+    delta = 0.5
+    @baggage_meeting_req = Baggage.find_by_sql(["SELECT f.* From baggages f WHERE EXISTS(SELECT s.id FROM baggages s WHERE f.num = s.num AND NOT (ABS(f.weight - s.weight) > :delta))",
+                                  {delta: delta}]).first
+    @result_string = "False" ? @baggage_meeting_req.nil? : "True"
+  end
+
+  def d_task
+    first_two = Baggage.order(num: :desc, weight: :desc).first(2)
+    if first_two.length > 1 && first_two[0].num > first_two[1].num && first_two[0].weight > first_two[1].weight
+      @baggage = first_two[0]
+    else
+      @baggage = nil
+    end
+  end
+
+  def e_task
+    @baggage = Baggage.where("num = 1 AND weight < 30").first
   end
 end
