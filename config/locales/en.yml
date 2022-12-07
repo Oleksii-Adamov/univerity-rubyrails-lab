@@ -45,3 +45,7 @@ en:
   new_baggage: "New baggage"
   not_found: "Not found"
   home: "Home"
+  num_more_than_two: "Number of passangers, that have more than two things"
+  num_more_than_mean: "Number of passangers, that have more than mean number of things"
+  true_as_str: "True"
+  false_as_str: "False"

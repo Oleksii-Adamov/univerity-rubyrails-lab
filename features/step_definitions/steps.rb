@@ -20,7 +20,7 @@ When('I create baggage:') do |table|
   attributes = table.rows_hash
   visit new_baggage_path
 
-  fill_in 'Num', with: attributes['num']
+  fill_in 'Number', with: attributes['num']
   fill_in 'Weight', with: attributes['weight']
   click_on 'Create Baggage'
 end
@@ -34,14 +34,13 @@ end
 When('I update baggage:') do |table|
   visit baggages_path + "/all_baggage"
   attributes = table.rows_hash
-  click_link "num = #{attributes["num"]}, weight = #{attributes["weight"]}"
+  click_link "Number = #{attributes["num"]}, Weight = #{attributes["weight"]}"
   click_link "Edit"
 end
 
 When('I update baggage to:') do |table|
-  page.should have_content("Edit Baggage")
   attributes = table.rows_hash
-  fill_in 'Num', with: attributes['num']
+  fill_in 'Number', with: attributes['num']
   fill_in 'Weight', with: attributes['weight']
   click_on 'Update Baggage'
 end
@@ -49,7 +48,7 @@ end
 When('I delete baggage:') do |table|
   visit baggages_path + "/all_baggage"
   attributes = table.rows_hash
-  click_link "num = #{attributes["num"]}, weight = #{attributes["weight"]}"
+  click_link "Number = #{attributes["num"]}, Weight = #{attributes["weight"]}"
   click_on "Delete"
 end
 

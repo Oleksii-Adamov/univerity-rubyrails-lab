@@ -18,8 +18,8 @@ Feature: Tasks
     Then I should see "Not found"
   Scenario: Task B
     When I execute "b_task"
-    Then I should see "num_more_than_two = 1"
-    And  I should see "num_more_than_mean = 1"
+    Then I should see "Number of passangers, that have more than two things = 1"
+    And  I should see "Number of passangers, that have more than mean number of things = 1"
   Scenario: Task C
     When I execute "c_task"
     Then in database should be baggage:
@@ -32,10 +32,10 @@ Feature: Tasks
   Scenario: Task D
     When I execute "d_task"
     Then I should see "Baggage"
-    And I should see "num = 3"
-    And I should see "weight = 30"
+    And I should see "Number = 3"
+    And I should see "Weight = 30"
   Scenario: Task E
     When I execute "e_task"
     Then I should see "Baggage"
-    And I should see "num = 1"
-    And I should see "weight = 25"
+    And I should see "Number = 1"
+    And I should see "Weight = 25"

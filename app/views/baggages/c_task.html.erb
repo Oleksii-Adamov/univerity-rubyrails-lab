@@ -1,3 +1,3 @@
 <%= render "nav"%>
 <h1><%= t 'task', name: "C"%></h1>
-<p><%= @result_string %></p>
+<p><%= @baggage_meeting_req.length == 0 ? (t 'false_as_str') : (t 'true_as_str') %></p>

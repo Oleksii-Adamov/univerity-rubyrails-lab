@@ -95,7 +95,6 @@ class BaggagesController < ApplicationController
     delta = 0.5
     @baggage_meeting_req = Baggage.find_by_sql(["SELECT f.* From baggages f WHERE EXISTS(SELECT s.id FROM baggages s WHERE (f.id != s.id AND f.num = s.num AND NOT(ABS(f.weight - s.weight) > ?)))",
                                                 delta])
-    @result_string = @baggage_meeting_req.length == 0 ? "False" : "True"
   end
 
   def d_task

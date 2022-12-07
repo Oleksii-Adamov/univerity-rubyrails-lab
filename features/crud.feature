@@ -9,13 +9,13 @@ Feature: CRUD
       | num | 1 |
       | weight | 25.0 |
     And I should see "Baggage"
-    And I should see "num = 1"
-    And I should see "weight = 25.0"
+    And I should see "Number = 1"
+    And I should see "Weight = 25.0"
   Scenario: Unable to create baggage with negative num
     When I create baggage:
       | num | -1 |
       | weight | 25.0 |
-    Then I should see "Num must be greater than or equal to 0"
+    Then I should see "Number must be greater than or equal to 0"
   Scenario: Unable to create baggage with negative weight
     When I create baggage:
       | num | 1 |
@@ -29,9 +29,8 @@ Feature: CRUD
       | num | 2 |
       | weight | 20.3 |
     When I execute "all_baggage"
-    Then I should see "All baggage"
-    And I should see "num = 1, weight = 25.0"
-    And I should see "num = 2, weight = 20.3"
+    And I should see "Number = 1, Weight = 25.0"
+    And I should see "Number = 2, Weight = 20.3"
   Scenario: Update
     Given I have baggage:
       | num | 1 |
@@ -46,8 +45,8 @@ Feature: CRUD
       | num | 4 |
       | weight | 40.0 |
     And I should see "Baggage"
-    And I should see "num = 4"
-    And I should see "weight = 40.0"
+    And I should see "Number = 4"
+    And I should see "Weight = 40.0"
   Scenario: Unable to update baggage with negative num
     Given I have baggage:
       | num | 1 |
@@ -58,7 +57,7 @@ Feature: CRUD
     And I update baggage to:
       | num | -4 |
       | weight | 40.0 |
-    Then I should see "Num must be greater than or equal to 0"
+    Then I should see "Number must be greater than or equal to 0"
   Scenario: Unable to update baggage with negative weight
     Given I have baggage:
       | num | 1 |
