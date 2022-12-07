@@ -1,15 +1,15 @@
 <%= render "nav"%>
 <%= stylesheet_link_tag('application')%>
 <div class="container d-flex justify-content-center">
-<ul class="list-group mt-5 text-white">
-  <% @baggages.each do |baggage| %>
-    <li class="list-group-item d-flex justify-content-center align-content-center">
-      <div class="d-flex flex-row">
-        <div class="ml-2">
-          <h6 class="mb-0"><%= link_to "num = #{baggage.num}, weight = #{baggage.weight}", baggage, :class => 'mine-text-white' %></h6>
-        </div>
-      </div>
-    </li>
-  <% end %>
-</ul>
+    <ul class="list-group mt-5 text-white">
+      <% @baggages.each do |baggage| %>
+        <li class="list-group-item d-flex justify-content-center align-content-center">
+          <div class="d-flex flex-row">
+            <div class="ml-2">
+              <h6 class="mb-0"><%= link_to (t 'activerecord.attributes.baggage.num') + " = #{baggage.num}, " + (t 'activerecord.attributes.baggage.weight') + " = #{baggage.weight}", baggage, :class => 'mine-text-white' %></h6>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
 </div>

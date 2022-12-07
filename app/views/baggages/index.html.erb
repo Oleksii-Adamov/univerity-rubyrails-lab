@@ -20,49 +20,49 @@
     <li class="list-group-item d-flex justify-content-center align-content-center">
       <div class="d-flex flex-row">
         <div class="ml-2">
-          <h6 class="mb-0"><%= link_to 'All baggage', {:action => 'all_baggage'}, :class => 'mine-text-white'%></h6>
+          <h6 class="mb-0"><%= link_to (t 'all_baggage'), {:action => 'all_baggage'}, :class => 'mine-text-white'%></h6>
         </div>
       </div>
     </li>
     <li class="list-group-item d-flex justify-content-center align-content-center">
       <div class="d-flex flex-row">
         <div class="ml-2">
-          <h6 class="mb-0"><%= link_to 'New baggage', new_baggage_path, :class => 'mine-text-white'%></h6>
+          <h6 class="mb-0"><%= link_to (t 'new_baggage'), new_baggage_path, :class => 'mine-text-white'%></h6>
         </div>
       </div>
     </li>
     <li class="list-group-item d-flex justify-content-center align-content-center">
       <div class="d-flex flex-row">
         <div class="ml-2">
-          <h6 class="mb-0"><%= link_to 'Task a', {:action => 'a_task'}, :class => 'mine-text-white'%></h6>
+          <h6 class="mb-0"><%= link_to (t 'task', name: "A"), {:action => 'a_task'}, :class => 'mine-text-white'%></h6>
         </div>
       </div>
     </li>
     <li class="list-group-item d-flex justify-content-center align-content-center">
       <div class="d-flex flex-row">
         <div class="ml-2">
-          <h6 class="mb-0"><%= link_to 'Task b', {:action => 'b_task'}, :class => 'mine-text-white'%></h6>
+          <h6 class="mb-0"><%= link_to (t 'task', name: "B"), {:action => 'b_task'}, :class => 'mine-text-white'%></h6>
         </div>
       </div>
     </li>
     <li class="list-group-item d-flex justify-content-center align-content-center">
       <div class="d-flex flex-row">
         <div class="ml-2">
-          <h6 class="mb-0"><%= link_to 'Task c', {:action => 'c_task'}, :class => 'mine-text-white'%></h6>
+          <h6 class="mb-0"><%= link_to (t 'task', name: "C"), {:action => 'c_task'}, :class => 'mine-text-white'%></h6>
         </div>
       </div>
     </li>
     <li class="list-group-item d-flex justify-content-center align-content-center">
       <div class="d-flex flex-row">
         <div class="ml-2">
-          <h6 class="mb-0"><%= link_to 'Task d', {:action => 'd_task'}, :class => 'mine-text-white'%></h6>
+          <h6 class="mb-0"><%= link_to (t 'task', name: "D"), {:action => 'd_task'}, :class => 'mine-text-white'%></h6>
         </div>
       </div>
     </li>
     <li class="list-group-item d-flex justify-content-center align-content-center">
       <div class="d-flex flex-row">
         <div class="ml-2">
-          <h6 class="mb-0"><%= link_to 'Task e', {:action => 'e_task'}, :class => 'mine-text-white'%></h6>
+          <h6 class="mb-0"><%= link_to (t 'task', name: "E"), {:action => 'e_task'}, :class => 'mine-text-white'%></h6>
         </div>
       </div>
     </li>

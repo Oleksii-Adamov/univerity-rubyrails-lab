@@ -30,4 +30,18 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    models:
+      baggage: "Baggage"
+    attributes:
+      baggage:
+        id: "ID"
+        num: "Number"
+        weight: "Weight"
+  delete: "Delete"
+  edit: "Edit"
+  task: "Task %{name}"
+  all_baggage: "All baggage"
+  new_baggage: "New baggage"
+  not_found: "Not found"
+  home: "Home"

@@ -1,0 +1,32 @@
+ua:
+  activerecord:
+    models:
+      baggage: "Багаж"
+    attributes:
+      baggage:
+        id: "ID"
+        num: "Кількість"
+        weight: "Вага"
+    errors:
+      models:
+        baggage:
+          attributes:
+            num:
+              blank: "є обов'язковим полем"
+              not_a_number: "повинна бути числом"
+              greater_than_or_equal_to: "має бути більше або дорівнювати 0"
+            weight:
+              blank: "є обов'язковим полем"
+              not_a_number: "повинна бути числом"
+              greater_than_or_equal_to: "має бути більше або дорівнювати 0"
+  helpers:
+    submit:
+      create: Створити %{model}
+      update: Оновити %{model}
+  delete: "Видалити"
+  edit: "Редагувати"
+  task: "Завдання %{name}"
+  all_baggage: "Весь багаж"
+  new_baggage: "Новий багаж"
+  not_found: "Не знайдено"
+  home: "Головна"
