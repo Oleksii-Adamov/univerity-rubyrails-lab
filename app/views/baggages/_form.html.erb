@@ -1,21 +1,26 @@
-<%= form_with model: baggage do |form| %>
-  <div>
-    <%= form.label :num %><br>
-    <%= form.text_field :num %>
-    <% baggage.errors.full_messages_for(:num).each do |message| %>
-      <div><%= message %></div>
+<%= stylesheet_link_tag('application')%>
+<div class="form-body">
+  <div style="display:flex;width:100%;">
+    <%= form_with model: baggage do |form| %>
+      <div>
+        <%= form.label :num %><br>
+        <%= form.text_field :num %>
+        <% baggage.errors.full_messages_for(:num).each do |message| %>
+          <div class="error_message"><%= message %></div>
+        <% end %>
+      </div>
+
+      <div>
+        <%= form.label :weight %><br>
+        <%= form.text_field :weight %>
+        <% baggage.errors.full_messages_for(:weight).each do |message| %>
+          <div class="error_message"><%= message %></div>
+        <% end %>
+      </div>
+
+      <p>
+        <%= form.submit %>
+      </p>
     <% end %>
   </div>
-
-  <div>
-    <%= form.label :weight %><br>
-    <%= form.text_field :weight %><br>
-    <% baggage.errors.full_messages_for(:weight).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
