@@ -1,0 +1,8 @@
+<h1>All baggage</h1>
+<ul>
+  <% @baggages.each do |baggage| %>
+    <li>
+      <%= link_to "num = #{baggage.num}, weight = #{baggage.weight}", baggage %>
+    </li>
+  <% end %>
+</ul>

@@ -1,10 +1,1 @@
-<h1>Baggage</h1>
-<p>id = <%= @baggage.id %></p>
-<p>num = <%= @baggage.num %></p>
-<p>weight = <%= @baggage.weight %></p>
-<ul>
-  <li><%= link_to "Edit", edit_baggage_path(@baggage) %></li>
-</ul>
-<%= form_with url: baggage_path, method: :delete do |form|%>
-  <%= form.submit "Delete" %>
-<% end %>
+<%= render "show_baggage", baggage: @baggage %>

@@ -5,4 +5,8 @@
   <p>id = <%= baggage.id %></p>
   <p>num = <%= baggage.num %></p>
   <p>weight = <%= baggage.weight %></p>
+  <%= link_to "Edit", edit_baggage_path(baggage) %>
+  <%= form_with url: baggages_path + "/" + baggage.id.to_s, method: :delete do |form|%>
+    <%= form.submit "Delete" %>
+  <% end %>
 <% end %>

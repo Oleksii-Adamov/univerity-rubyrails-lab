@@ -1,17 +1,11 @@
 <h1>Menu</h1>
 <ul>
+  <li><%= link_to 'All baggage', :action => 'all_baggage'%></li>
   <li><%= link_to "New Baggage", new_baggage_path %></li>
   <li><%= link_to 'Task a', :action => 'a_task'%></li>
   <li><%= link_to 'Task b', :action => 'b_task'%></li>
   <li><%= link_to 'Task c', :action => 'c_task'%></li>
   <li><%= link_to 'Task d', :action => 'd_task'%></li>
   <li><%= link_to 'Task e', :action => 'e_task'%></li>
-</ul>
-<ul>
-  <% @baggages.each do |baggage| %>
-    <li>
-      <%= link_to "num = %d, weight = %d" % [baggage.num, baggage.weight], baggage %>
-    </li>
-  <% end %>
 </ul>
 
