@@ -22,7 +22,13 @@ Feature: Tasks
     And  I should see "num_more_than_mean = 1"
   Scenario: Task C
     When I execute "c_task"
-    Then I should see "True"
+    Then in database should be baggage:
+      | num | 2 |
+      | weight | 20.3 |
+    And in database should be baggage:
+      | num | 2 |
+      | weight | 20.0 |
+    And I should see "True"
   Scenario: Task D
     When I execute "d_task"
     Then I should see "Baggage"

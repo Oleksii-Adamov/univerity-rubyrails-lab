@@ -93,11 +93,9 @@ class BaggagesController < ApplicationController
 
   def c_task
     delta = 0.5
-    @baggage_meeting_req = Baggage.find_by_sql(["SELECT f.* From baggages f WHERE EXISTS(SELECT s.id FROM baggages s WHERE f.num = s.num AND NOT(ABS(f.weight - s.weight) > :delta))",
-                                  {delta: delta}])
-    # @baggage_meeting_req = Baggage.all.select {|baggage| Baggage.all.select{|second_baggage| baggage.num == second_baggage.num and
-    #   not (baggage.weight - second_baggage.weight).abs > delta}.length > 0}
-    @result_string = "False" ? @baggage_meeting_req.length == 0 : "True"
+    @baggage_meeting_req = Baggage.find_by_sql(["SELECT f.* From baggages f WHERE EXISTS(SELECT s.id FROM baggages s WHERE (f.id != s.id AND f.num = s.num AND NOT(ABS(f.weight - s.weight) > ?)))",
+                                                delta])
+    @result_string = @baggage_meeting_req.length == 0 ? "False" : "True"
   end
 
   def d_task
