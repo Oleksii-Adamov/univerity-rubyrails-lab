@@ -13,3 +13,28 @@
  *= require_tree .
  *= require_self
  */
+.list-group{
+    width: 400px !important;
+}
+
+.list-group-item{
+    margin-top:10px;
+    border-radius: none;
+    background: #5E35B1;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.list-group-item:hover{
+    transform: scaleX(1.1);
+}
+
+.mine-text-white {
+    color: white;
+}
+
+.mine-text-white:hover {
+    color: white;
+    text-decoration: underline;
+}
