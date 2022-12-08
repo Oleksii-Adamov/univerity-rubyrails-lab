@@ -1,11 +1,5 @@
 class BaggagesController < ApplicationController
 
-  def initialize
-    @mean_num = Float::NAN
-    @mean_weight = Float::NAN
-    @baggages = nil
-  end
-
   def index
     
   end
@@ -57,22 +51,6 @@ class BaggagesController < ApplicationController
 
   def baggage_params
     params.require(:baggage).permit(:num, :weight)
-  end
-
-  def mean_weight
-    if @mean_num.nan?
-      sum = @baggages.reduce(0) {|acc, baggage| acc + baggage.weight}
-      @mean_num = sum .fdiv @baggages.length
-    end
-    @mean_num
-  end
-
-  def mean_num
-    if @mean_weight.nan?
-      sum = @baggages.reduce(0) {|acc, baggage| acc + baggage.num}
-      sum .fdiv @baggages.length
-    end
-    @mean_weight
   end
 
   def baggage_mean_weight(baggage)
